@@ -14,6 +14,10 @@ h1 {
     color: #FFF;
 }
 
+h2 {
+    color: #FFF;
+}
+
 .spielfeld {
     display: grid;
     grid-template-columns: repeat(3, auto);

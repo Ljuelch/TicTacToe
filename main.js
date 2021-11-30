@@ -12,10 +12,6 @@ const winConditions = [
     [0, 4, 8],
     [2, 4, 6]
 ];
-console.log(winConditions);
-
-//document.addEventListener("DOMContentLoaded", main());
-
 
 function main() {
     let cells = document.getElementsByClassName("cell");
@@ -35,17 +31,53 @@ function printField(cell) {
     cell.innerText = nextPlayer;
 }
 
+function changeH2(nextPlayer) {
+    let uebersicht = document.getElementById("changePlayer");
+    uebersicht.innerHTML = (`Spieler ${nextPlayer} ist am Zug`);
+}
+
 function changePlayer() {
     if (nextPlayer === playerX) {
         nextPlayer = playerO;
-        return;
-    } 
-    nextPlayer = playerX;
+    } else {
+        nextPlayer = playerX;
+    }
+    changeH2(nextPlayer);
 }
 
 function isValidInput(cell) {
     return cell.innerText === "";
 }
+
+function checkWin() {
+    const players = [playerX, playerO];
+    let   fields  = [];
+
+    for (let i = 0; i < 9; i++) {
+        const field = document.getElementById("field_" + i);
+        fields[i] = (field.innerText || "").trim() + field.id.split("_")[1];
+    }
+
+    for (const player of players) {
+        for (const condition of winConditions) {
+            for (const i in condition) {
+                if (fields.indexOf(player + condition[i]) == -1) {
+                    break;
+                }
+                if (i == condition.length -1) {
+                   // printField();
+                    setTimeout(winMessage, 10, player);
+                }
+            }
+        }
+    }
+}
+
+function winMessage(player) {
+    window.alert("HURENSOHN");
+    // hide fenster css definieren
+}
+
 
 /*
 // hier field + arrayname
@@ -78,33 +110,6 @@ filterIdName();
 // wenn ein inneres array gefüllt ist (von selbem spieler) dann win
 
 //  winConditions.setAttribute("");
-
-function checkWin() {
-    const players = [playerX, playerO];
-    let   fields  = [];
-
-    for (let i = 0; i < 9; i++) {
-        const field = document.getElementById("field_" + i);
-        fields[i] = (field.innerText || "").trim() + field.id.split("_")[1];
-    }
-
-    for (const player of players) {
-        for (const condition of winConditions) {
-            for (const i in condition) {
-                if (fields.indexOf(player + condition[i]) == -1) {
-                    break;
-                }
-                if (i == condition.length -1) {
-                    winMessage(player);
-                }
-            }
-        }
-    }
-}
-
-function winMessage(player) {
-    window.alert("HURENSOHN");
-}
 /*
 function checkWin() {
 
