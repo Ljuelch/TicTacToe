@@ -1,10 +1,13 @@
 const playerX = "X";
 const playerO = "O";
 var nextPlayer = playerX;
+var activeGame = document.getElementById("spielfeld");
+activeGame.disable = false;
 
 const winConditions = [
     [0, 1, 2],
     [1, 4, 7],
+    [3, 4, 5],
     [6, 7, 8],
     [0, 3, 6],
     [1, 4, 7],
@@ -17,6 +20,9 @@ function main() {
     let cells = document.getElementsByClassName("cell");
     for (const cell of cells) {
         cell.addEventListener("click", function () {
+            if (activeGame.disable) {
+                return;
+            }
             if (isValidInput(this)) {
                 printField(this);
                 checkWin();
@@ -65,7 +71,7 @@ function checkWin() {
                     break;
                 }
                 if (i == condition.length -1) {
-                   // printField();
+                    activeGame.disable = true;
                     setTimeout(winMessage, 10, player);
                 }
             }
@@ -74,9 +80,18 @@ function checkWin() {
 }
 
 function winMessage(player) {
-    window.alert("HURENSOHN");
+    window.alert(`Player ${player} hat gewonnen`);
     // hide fenster css definieren
 }
+
+function restart() {
+    let btn = document.getElementById("restart-game");
+    //let spielfeld = document.getElementsByClassName("spielfeld");
+    btn.addEventListener("click", function () {
+        window.location.reload();
+    })
+}
+restart();
 
 
 /*

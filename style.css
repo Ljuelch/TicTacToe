@@ -18,7 +18,7 @@ h2 {
     color: #FFF;
 }
 
-.spielfeld {
+#spielfeld {
     display: grid;
     grid-template-columns: repeat(3, auto);
     width: 306px;
