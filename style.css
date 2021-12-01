@@ -36,6 +36,38 @@ h2 {
     font-size: 60px;
 }
 
-.restart-game {
+.cell:hover {
+    background-color: #00ffff33;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#restart-game {
+    cursor: pointer;
     color: #FFF;
+    height: 50px;
+    width: 150px;
+    border: 1px solid #FFF;
+    border-radius: 6px;
+    font-size: 23px;
+}
+
+#restart-game:hover {
+    color: aqua;
+    border-color: #00ffffc2;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.popUp {
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 3rem;
+}
+
+.winMessage {
+    width: 50%;
+    height: 50%;
+    background-color: #00ffff3d;
 }

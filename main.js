@@ -80,6 +80,8 @@ function checkWin() {
 }
 
 function winMessage(player) {
+    //var popUp = document.getElementById("winMessage");
+    // //popUp.style.
     window.alert(`Player ${player} hat gewonnen`);
     // hide fenster css definieren
 }
