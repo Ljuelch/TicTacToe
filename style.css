@@ -43,22 +43,6 @@ h2 {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-#restart-game {
-    cursor: pointer;
-    color: #FFF;
-    height: 50px;
-    width: 150px;
-    border: 1px solid #FFF;
-    border-radius: 6px;
-    font-size: 23px;
-}
-
-#restart-game:hover {
-    color: aqua;
-    border-color: #00ffffc2;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
 #popUp {
     display: flex;
     align-items: center;
@@ -78,4 +62,20 @@ h2 {
     background-color: #00ffff3d;
     font-size: 3rem;
     color: red;
+}
+
+button {
+    cursor: pointer;
+    color: #FFF;
+    height: 50px;
+    width: 150px;
+    border: 1px solid #FFF;
+    border-radius: 6px;
+    font-size: 23px;
+}
+
+button:hover {
+    color: aqua;
+    border-color: #00ffffc2;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
